@@ -30,8 +30,7 @@ class Field
 
   def cleanup
     size = @my_ants.length
-    @my_ants.select!{|ant| ant.alive?}
-    $stderr.puts "turn #{@turn}: ants dead: #{size - @my_ants.size}"
+    @my_ants = @my_ants.select{|ant| ant.alive?}
   end
 
   def update_map row, col, type, owner

@@ -54,4 +54,7 @@ class Square
 
 		return @ai.map[row][col]
 	end
+	def to_str
+		"Square row = #{row}, col = #{col}"
+	end
 end

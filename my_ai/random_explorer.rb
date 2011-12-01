@@ -4,7 +4,7 @@ class RandomExplorer < Algorithum
   def compute_next ant
     rand_max = 0
     weights = {}
-    [:N, :E, :S, :W].each do |dir|
+    [:N, :S, :E, :W].each do |dir|
       weight = MAX_FRESHNESS
       weight -= ant.square.neighbor(dir).freshness
       rand_max += weight

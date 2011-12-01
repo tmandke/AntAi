@@ -12,9 +12,10 @@ class SuperAnt < Ant
   end
 
   def is_me? pos
-    if @expected_square == pos
+    if @expected_square && @expected_square.row == pos.row && @expected_square.col == pos.col
       @square = pos
       @square.ant = self
+      @alive = true
       true
     else
       false 
