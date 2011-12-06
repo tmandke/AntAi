@@ -8,7 +8,7 @@ class Field
     @rows, @cols, @ai = rows, cols, ai
     @map=Array.new(@rows){|row| 
       Array.new(@cols){|col| 
-        Square.new false, false, false, nil, row, col, @ai 
+        SuperSquare.new false, false, false, nil, row, col, @ai 
         } }
 
     @my_ants=[]

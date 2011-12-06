@@ -22,6 +22,7 @@ class AI
 		@map=nil
 		@turn_number=0
 		@did_setup=false
+		Logger.ai = self
 	end
 
 	# Returns a read-only hash of all settings.
@@ -149,6 +150,7 @@ class AI
 			row, col, direction = a, b, c
 			@stdout.puts "o #{row} #{col} #{direction.to_s.upcase}"
 		end
+		true
 	end
 
 

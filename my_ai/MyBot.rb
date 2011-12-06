@@ -5,7 +5,8 @@ ai=AI.new
 
 ai.setup do |ai|
 	# your setup code here, if any
-	SuperAnt.algorithums << RandomExplorer.new
+  SuperAnt.algorithums << FoodDart.new
+  SuperAnt.algorithums << RandomExplorer.new
 end
 
 ai.run do |ai|

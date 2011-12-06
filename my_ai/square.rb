@@ -33,8 +33,22 @@ class Square
 	def ant?; @ant and @ant.alive?; end;
 
 	def freshness
-		water? ? MAX_FRESHNESS : @visit_freshness
+		water? || @hill == 0 ? MAX_FRESHNESS : @visit_freshness
 	end
+
+	def expect_ant
+		@visit_freshness = MAX_FRESHNESS
+	end
+
+	def occupied?
+		freshness == MAX_FRESHNESS
+	end
+
+	def neighbour_offset r, c
+		row, col = @ai.normalize @row+r.to_i, @col+c.to_i
+		return @ai.map[row][col]
+	end
+
 	# Returns a square neighboring this one in given direction.
 	def neighbor direction
 		direction=direction.to_s.upcase.to_sym # canonical: :N, :E, :S, :W
